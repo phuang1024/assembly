@@ -1,3 +1,5 @@
+# write 'a' to stdout
+
 .globl main
 
 main:
@@ -5,7 +7,7 @@ main:
 
     mov $1, %rax    # syscall stream write
     mov $1, %rdi    # fd for stdout = 1
-    mov %rsp, %rsi  # char address is first char
+    mov %rsp, %rsi  # char address is sp
     mov $2, %rdx    # size
     syscall
 
